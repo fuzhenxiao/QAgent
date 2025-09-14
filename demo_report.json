@@ -1,0 +1,137 @@
+{
+  "plan": {
+    "calibration": "calibrate qubit-8 with new frequency 5.66e9",
+    "nodes": [
+      {
+        "id": "qrng_0",
+        "name": "qrng",
+        "logical_parameter": 10,
+        "resource_parameter": 10
+      },
+      {
+        "id": "adder_1",
+        "name": "adder",
+        "logical_parameter": 5,
+        "resource_parameter": 11
+      },
+      {
+        "id": "permutation_2",
+        "name": "permutation",
+        "logical_parameter": 5,
+        "resource_parameter": 5
+      }
+    ],
+    "edges": [
+      {
+        "source": "qrng_0",
+        "target": "adder_1",
+        "description": "Split the 10 measured qubits into two 5-qubit registers and feed them to the adder."
+      },
+      {
+        "source": "adder_1",
+        "target": "permutation_2",
+        "description": "Use the 5-bit result from adder as input for permutation."
+      }
+    ]
+  },
+  "enriched_plan": {
+    "calibration": "calibrate qubit-8 with new frequency 5.66e9",
+    "nodes": [
+      {
+        "id": "qrng_0",
+        "name": "qrng",
+        "logical_parameter": 10,
+        "resource_parameter": 10,
+        "parameter_reason": "Generating 10 random qubits requires 10 physical qubits; no ancilla needed."
+      },
+      {
+        "id": "adder_1",
+        "name": "adder",
+        "logical_parameter": 5,
+        "resource_parameter": 12,
+        "parameter_reason": "For a 5-bit addition using full adders, we need 2*5 + 2 = 12 qubits (5 for each input, 1 carry-in, 1 carry-out)."
+      },
+      {
+        "id": "permutation_2",
+        "name": "permutation",
+        "logical_parameter": 5,
+        "resource_parameter": 5,
+        "parameter_reason": "Permuting 5 qubits requires 5 qubits, no additional ancillas."
+      }
+    ],
+    "edges": [
+      {
+        "source": "qrng_0",
+        "target": "adder_1",
+        "in_qubit_number": "10",
+        "out_qubit_number": "12",
+        "description": "Direct state transfer of 10 qubits from QRNG split into two 5-qubit registers to the adder; includes 1-bit carry-in and 1-bit carry-out."
+      },
+      {
+        "source": "adder_1",
+        "target": "permutation_2",
+        "in_qubit_number": "5",
+        "out_qubit_number": "5",
+        "description": "Amplitude encoding of 5-bit sum from adder into a 5-qubit register for permutation."
+      }
+    ]
+  },
+  "dispatch_plan": {
+    "qrng_0": {
+      "algo": "qrng",
+      "route": "guided"
+    },
+    "adder_1": {
+      "algo": "adder",
+      "route": "tools"
+    },
+    "permutation_2": {
+      "algo": "permutation",
+      "route": "tools"
+    }
+  },
+  "calibration": {
+    "description": "calibrate qubit-8 with new frequency 5.66e9",
+    "report": "successfully calibrated!",
+    "success": true
+  },
+  "results": {
+    "qrng_0": {
+      "algo": "qrng",
+      "route": "guided",
+      "logical_parameter": 10,
+      "resource_parameter": 10,
+      "code": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\nbit[10] c;\nqubit[10] q;\nh q[0];\nh q[1];\nh q[2];\nh q[3];\nh q[4];\nh q[5];\nh q[6];\nh q[7];\nh q[8];\nh q[9];\nc[0] = measure q[0];\nc[1] = measure q[1];\nc[2] = measure q[2];\nc[3] = measure q[3];\nc[4] = measure q[4];\nc[5] = measure q[5];\nc[6] = measure q[6];\nc[7] = measure q[7];\nc[8] = measure q[8];\nc[9] = measure q[9];",
+      "report": [
+        "candidate #1, trial #1, success, reason is passed all tests"
+      ],
+      "success": true
+    },
+    "adder_1": {
+      "algo": "adder",
+      "route": "tools",
+      "logical_parameter": 5,
+      "resource_parameter": 12,
+      "code": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\ngate MAJ _gate_q_0, _gate_q_1, _gate_q_2 {\n  cx _gate_q_0, _gate_q_1;\n  cx _gate_q_0, _gate_q_2;\n  ccx _gate_q_2, _gate_q_1, _gate_q_0;\n}\ngate UMA _gate_q_0, _gate_q_1, _gate_q_2 {\n  ccx _gate_q_2, _gate_q_1, _gate_q_0;\n  cx _gate_q_0, _gate_q_2;\n  cx _gate_q_2, _gate_q_1;\n}\ngate FullAdder _gate_q_0, _gate_q_1, _gate_q_2, _gate_q_3, _gate_q_4, _gate_q_5, _gate_q_6, _gate_q_7, _gate_q_8, _gate_q_9, _gate_q_10, _gate_q_11 {\n  MAJ _gate_q_1, _gate_q_6, _gate_q_0;\n  MAJ _gate_q_2, _gate_q_7, _gate_q_1;\n  MAJ _gate_q_3, _gate_q_8, _gate_q_2;\n  MAJ _gate_q_4, _gate_q_9, _gate_q_3;\n  MAJ _gate_q_5, _gate_q_10, _gate_q_4;\n  cx _gate_q_5, _gate_q_11;\n  UMA _gate_q_5, _gate_q_10, _gate_q_4;\n  UMA _gate_q_4, _gate_q_9, _gate_q_3;\n  UMA _gate_q_3, _gate_q_8, _gate_q_2;\n  UMA _gate_q_2, _gate_q_7, _gate_q_1;\n  UMA _gate_q_1, _gate_q_6, _gate_q_0;\n}\nqubit[5] a;\nqubit[5] b;\nqubit[1] cin;\nqubit[1] cout;\nFullAdder a[0], a[1], a[2], a[3], a[4], b[0], b[1], b[2], b[3], b[4], cin[0], cout[0];",
+      "report": [
+        "candidate #1, trial #1, success, reason is passed all tests"
+      ],
+      "success": true
+    },
+    "permutation_2": {
+      "algo": "permutation",
+      "route": "tools",
+      "logical_parameter": 5,
+      "resource_parameter": 5,
+      "code": "OPENQASM 3.0;\ninclude \"stdgates.inc\";\ngate permutation__1_2_3_4_0_ _gate_q_0, _gate_q_1, _gate_q_2, _gate_q_3, _gate_q_4 {\n  swap _gate_q_3, _gate_q_4;\n  swap _gate_q_2, _gate_q_4;\n  swap _gate_q_1, _gate_q_4;\n  swap _gate_q_0, _gate_q_4;\n}\nqubit[5] q;\npermutation__1_2_3_4_0_ q[0], q[1], q[2], q[3], q[4];",
+      "report": [
+        "candidate #1, trial #1, success, reason is passed all tests"
+      ],
+      "success": true
+    }
+  },
+  "resource_summary": {
+    "total_resource_qubits": 27
+  },
+  "final_report": "# Quantum Workflow Report\n**Overall Status:** Success\n\n## User Request\n> Calibrate device: set qubit-8 frequency to 5.66e9, then Use QRNG to generate 10 random qubits, split into two 5-qubit registers, add them with the quantum adder to get a 5-bit number (abandon the cout), then apply permutation by 1 bit.\n\n## Calibration\n- Request: calibrate qubit-8 with new frequency 5.66e9\n- Status: Success\n```text\nsuccessfully calibrated!\n```\n\n## Qubit Usage\n- **qrng_0** (qrng): logical=10, resource=10 — _Generating 10 random qubits requires 10 physical qubits; no ancilla needed._\n- **adder_1** (adder): logical=5, resource=12 — _For a 5-bit addition using full adders, we need 2*5 + 2 = 12 qubits (5 for each input, 1 carry-in, 1 carry-out)._\n- **permutation_2** (permutation): logical=5, resource=5 — _Permuting 5 qubits requires 5 qubits, no additional ancillas._\n\n**Total resource qubits:** 27\n\n## Data Transfers (Edges)\n- qrng_0 → adder_1 (in=10, out=12): Direct state transfer of 10 qubits from QRNG split into two 5-qubit registers to the adder; includes 1-bit carry-in and 1-bit carry-out.\n- adder_1 → permutation_2 (in=5, out=5): Amplitude encoding of 5-bit sum from adder into a 5-qubit register for permutation.\n\n## QASM Artifacts\n### Node qrng_0 (qrng)\n```qasm\nOPENQASM 3.0;\ninclude \"stdgates.inc\";\nbit[10] c;\nqubit[10] q;\nh q[0];\nh q[1];\nh q[2];\nh q[3];\nh q[4];\nh q[5];\nh q[6];\nh q[7];\nh q[8];\nh q[9];\nc[0] = measure q[0];\nc[1] = measure q[1];\nc[2] = measure q[2];\nc[3] = measure q[3];\nc[4] = measure q[4];\nc[5] = measure q[5];\nc[6] = measure q[6];\nc[7] = measure q[7];\nc[8] = measure q[8];\nc[9] = measure q[9];\n```\n### Node adder_1 (adder)\n```qasm\nOPENQASM 3.0;\ninclude \"stdgates.inc\";\ngate MAJ _gate_q_0, _gate_q_1, _gate_q_2 {\n  cx _gate_q_0, _gate_q_1;\n  cx _gate_q_0, _gate_q_2;\n  ccx _gate_q_2, _gate_q_1, _gate_q_0;\n}\ngate UMA _gate_q_0, _gate_q_1, _gate_q_2 {\n  ccx _gate_q_2, _gate_q_1, _gate_q_0;\n  cx _gate_q_0, _gate_q_2;\n  cx _gate_q_2, _gate_q_1;\n}\ngate FullAdder _gate_q_0, _gate_q_1, _gate_q_2, _gate_q_3, _gate_q_4, _gate_q_5, _gate_q_6, _gate_q_7, _gate_q_8, _gate_q_9, _gate_q_10, _gate_q_11 {\n  MAJ _gate_q_1, _gate_q_6, _gate_q_0;\n  MAJ _gate_q_2, _gate_q_7, _gate_q_1;\n  MAJ _gate_q_3, _gate_q_8, _gate_q_2;\n  MAJ _gate_q_4, _gate_q_9, _gate_q_3;\n  MAJ _gate_q_5, _gate_q_10, _gate_q_4;\n  cx _gate_q_5, _gate_q_11;\n  UMA _gate_q_5, _gate_q_10, _gate_q_4;\n  UMA _gate_q_4, _gate_q_9, _gate_q_3;\n  UMA _gate_q_3, _gate_q_8, _gate_q_2;\n  UMA _gate_q_2, _gate_q_7, _gate_q_1;\n  UMA _gate_q_1, _gate_q_6, _gate_q_0;\n}\nqubit[5] a;\nqubit[5] b;\nqubit[1] cin;\nqubit[1] cout;\nFullAdder a[0], a[1], a[2], a[3], a[4], b[0], b[1], b[2], b[3], b[4], cin[0], cout[0];\n```\n### Node permutation_2 (permutation)\n```qasm\nOPENQASM 3.0;\ninclude \"stdgates.inc\";\ngate permutation__1_2_3_4_0_ _gate_q_0, _gate_q_1, _gate_q_2, _gate_q_3, _gate_q_4 {\n  swap _gate_q_3, _gate_q_4;\n  swap _gate_q_2, _gate_q_4;\n  swap _gate_q_1, _gate_q_4;\n  swap _gate_q_0, _gate_q_4;\n}\nqubit[5] q;\npermutation__1_2_3_4_0_ q[0], q[1], q[2], q[3], q[4];\n```"
+}
