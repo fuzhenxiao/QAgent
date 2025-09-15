@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 class SearchEngine:
     def __init__(self):
         self.session = requests.Session()
-        self.api_key = "AIzaSyCFILzxXFMP5A-M_mcRsCE7PHWtLImTMek"
-        self.cse_id = "102e9afcad9db4f6a"  # Replace with your Google Custom Search Engine ID
+        self.api_key = "YOUR KEY"
+        self.cse_id = "YOURKEY"  # Replace with your Google Custom Search Engine ID
         
     def search(self, keywords='quantum, algorithm, circuit', num_results=5):
 
