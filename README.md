@@ -67,10 +67,6 @@ Running it will:
 Both reports contain the full QASM code and calibration details satisfying the user query.  
 
 ## First-time setup
-- Before running, unzip `kernels.zip` into the same directory:  
-  ```bash
-  unzip kernels.zip
-
 - The Retrieval-Augmented Generation (RAG) step takes about 1–2 minutes during the first run.
 
 ## Environment Requirements
