@@ -1,0 +1,17 @@
+name:
+pe
+
+aliases:
+phase_estimation, quantum_phase_estimation
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning x has bit-width n (counting qubits), and m, meaning q has bit-width m (system/eigenstate register)
+
+resource parameter:
+n+1, 1 more qubit is needed to carry out CU gate

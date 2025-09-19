@@ -1,0 +1,2 @@
+Perform a cyclic shift of all qubits by one position. For an n-qubit register, qubit q[i] is mapped to q[(i+1) mod n]. In total, the circuit uses n qubits. The input should be stored in quantum register 'q', and after applying the gate, the state is permuted so that each qubit’s value is shifted forward by one position, with the last qubit wrapping around into position 0. Please give me the qasm code when n=6.
+

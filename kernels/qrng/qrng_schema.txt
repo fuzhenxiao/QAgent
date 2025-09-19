@@ -1,0 +1,17 @@
+name:
+qrng
+
+aliases:
+quantum_random_number_generator, random_bits
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the register q has bit-width n (number of random bits produced)
+
+resource parameter:
+n, because the register q uses n qubits (no ancilla)

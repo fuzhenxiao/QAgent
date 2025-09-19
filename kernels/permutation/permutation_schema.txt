@@ -1,0 +1,16 @@
+permutation
+
+aliases:
+permute, wire_permutation, qubit_permutation
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the register q has bit-width n (number of qubits being permuted)
+
+resource parameter:
+n, because the register q uses n qubits (no ancilla)

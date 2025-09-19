@@ -1,0 +1,1 @@
+Compute the logical OR of an n-sized qubit register. In total, it needs n input qubits and 1 output qubit. The input should be in quantum register 'in_0', and the OR result should be stored in the output qubit 'out'.Please write qasm code for OR module when n=5.

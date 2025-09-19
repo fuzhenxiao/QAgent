@@ -1,0 +1,17 @@
+name:
+or
+
+aliases:
+logical_or, quantum_or
+
+input:
+in
+
+output:
+out
+
+logical parameter:
+n, meaning the input register x has bit-width n (number of qubits carrying the inputs)
+
+resource parameter:
+n+1, because x uses n qubits and output uses 1 qubit

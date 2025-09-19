@@ -1,0 +1,17 @@
+name:
+bv
+
+aliases:
+bernstein_vazirani, bernstein-vazirani
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the input register x has bit-width n (qubits) and the hidden string is length n
+
+resource parameter:
+n

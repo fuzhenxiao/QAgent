@@ -1,0 +1,17 @@
+name:
+cluster
+
+aliases:
+cluster_state, 1d_cluster, linear_cluster
+
+input:
+q (n-qubit register, typically initialized to |0⟩^n; circuit prepares |+⟩^n via H on each qubit)
+
+output:
+q (entangled into an n-qubit 1D cluster state; no ancilla)
+
+logical parameter:
+n, the number of qubits in the linear chain
+
+resource parameter:
+n, n qubits

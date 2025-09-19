@@ -1,0 +1,17 @@
+name:
+dj
+
+aliases:
+deutsch_jozsa, deutsch-jozsa
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the input register x has bit-width n (number of query qubits)
+
+resource parameter:
+n

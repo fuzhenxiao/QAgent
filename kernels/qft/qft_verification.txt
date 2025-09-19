@@ -1,0 +1,170 @@
+Verifying QFT for n=2
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 10
+Verifying QFT for n=3
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 20
+Verifying QFT for n=4
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 40
+Verifying QFT for n=5
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 10/10, Fail: 0/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Total Success: 10; Total Fail: 70
+Verifying QFT for n=6
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100
+Verifying QFT for n=7
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100
+Verifying QFT for n=8
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100
+Verifying QFT for n=9
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100
+Verifying QFT for n=10
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100
+Verifying QFT for n=11
+   Running Test Case 1
+        Success: 0/10, Fail: 10/10
+   Running Test Case 2
+        Success: 0/10, Fail: 10/10
+   Running Test Case 3
+        Success: 0/10, Fail: 10/10
+   Running Test Case 4
+        Success: 0/10, Fail: 10/10
+   Running Test Case 5
+        Success: 0/10, Fail: 10/10
+   Running Test Case 6
+        Success: 0/10, Fail: 10/10
+   Running Test Case 7
+        Success: 0/10, Fail: 10/10
+   Running Test Case 8
+        Success: 0/10, Fail: 10/10
+   Running Test Case 9
+        Success: 0/10, Fail: 10/10
+   Running Test Case 10
+        Success: 0/10, Fail: 10/10
+   Total Success: 0; Total Fail: 100

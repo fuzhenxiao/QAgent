@@ -1,0 +1,17 @@
+name:
+w_state
+
+aliases:
+w, dicke_k1
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the register q has bit-width n (number of qubits in the W state)
+
+resource parameter:
+n, because the register q uses n qubits (no ancilla)

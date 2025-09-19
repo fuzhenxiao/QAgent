@@ -1,0 +1,18 @@
+name:
+adder
+
+aliases: 
+add, sum, sum_module
+
+input: 
+a, b, cin
+
+output: 
+a, cout (sum of a and b is stored in a)
+
+logical parameter:
+n, meaning the input and output registers both have bit-width of n (qubits)
+
+resource parameter:
+2n+2, because input and output registers use 2*n qubits, and cin uses 1 qubit, cout uses 1 qubit.
+ 

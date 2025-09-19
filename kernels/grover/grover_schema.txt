@@ -1,0 +1,17 @@
+name:
+grover
+
+aliases:
+grover_search, amplitude_amplification
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the input register x has bit-width n (number of search qubits)
+
+resource parameter:
+n

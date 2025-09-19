@@ -1,0 +1,17 @@
+name:
+ghz
+
+aliases:
+greenberger_horne_zeilinger, cat_state
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the register q has bit-width n (number of qubits entangled in the GHZ state)
+
+resource parameter:
+n, because the register q uses n qubits

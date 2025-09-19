@@ -1,0 +1,17 @@
+name:
+qft
+
+aliases:
+quantum_fourier_transform, fourier_transform
+
+input:
+q
+
+output:
+q
+
+logical parameter:
+n, meaning the register q has bit-width n (number of qubits transformed)
+
+resource parameter:
+n, because the register q uses n qubits (no ancilla)

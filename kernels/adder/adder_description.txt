@@ -1,0 +1,1 @@
+I want to Compute the sum of two n-sized qubit registers, including carry-in and -out bits. In total, it would need 2*n+2 qubits. The input should be in quantum register 'a', 'b' and 'cin', the sum should be stored in 'a' and the carry-out should be stored in 'cout'.Please give me the qasm code when n=6. 
