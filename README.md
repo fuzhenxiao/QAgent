@@ -2,6 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2508.20134-b31b1b.svg)](https://arxiv.org/abs/2508.20134)
 
+Renamed from fuzhenxiao/QCoder to fuzhenxiao/QAgent
 This repository provides the **latest implementation of QAgent**, a multi-agent framework for autonomous OpenQASM programming.  
 It corresponds to the paper:  
 **[QAgent: An LLM-based Multi-Agent System for Autonomous OpenQASM Programming](https://arxiv.org/abs/2508.20134)**.  
