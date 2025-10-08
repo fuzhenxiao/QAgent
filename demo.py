@@ -21,6 +21,10 @@ strategy = {
     # any task that is not included in the database will be assigned to Tools-Augmented Coding Agent
 }
 
+
+# for now only "bv", "dj", "grover", "qrng", "ghz", "cluster", "qft", "or", "adder", "pe", "permutation", "w_state" are included in the knowledge base
+# but it can be extended by offering examples or generation-tools
+
 demo_request = (
     "Calibrate device: set qubit-8 frequency to 5.66e9, then Use QRNG to generate 10 random qubits, "
     "split into two 5-qubit registers, add them with the quantum adder to get a 5-bit number "
@@ -51,5 +55,5 @@ def main():
     print(f"Full JSON payload written to: {json_path}")
 
 if __name__ == "__main__":
-    # for the first run, it will take ~1 minute for the RAG module to do mapping.
+    # for the first run, it will take ~1 minute for the RAG module to finish mapping.
     main()
