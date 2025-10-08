@@ -37,7 +37,6 @@ QAgent introduces several key contributions:
 The workflow is composed of multiple collaborating agents:  
 
 - **Plan Agent**: Decomposes user's request into sub-quantum-kernels. It first generates draft plan then revises it into a detailed & graph-based plan (with correct parameters).
-  ![Workflow Diagram](./figures/task_graph.png)
 - **Calibration Agent**: Calibrate the quantum backends based on user's request.  
 - **Guided Few-Shot Coding Agent**: Handles common, well-structured kernels (quantum algorithms) with test-reflection loop.  
 - **Tools-Augmented Coding Agent**: Handles tool-dependent，complicated, or novel kernels with test-reflection loop.  
