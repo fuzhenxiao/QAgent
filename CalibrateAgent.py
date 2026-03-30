@@ -35,9 +35,6 @@ class Calibrate_Agent(object):
         self.LLM = LLM_model(llm_choice, llm_key, temp=1)
         self.calibrator = Calibrator(self.LLM)
 
-    # =========================
-    # Demo-oriented v2 helpers
-    # =========================
     def _normalize_qubit_id(self, qubit_id):
         if isinstance(qubit_id, int):
             return qubit_id
@@ -219,7 +216,7 @@ class Calibrate_Agent(object):
         return "\n".join(lines)
 
 
-    def solve_standard(self, description):
+    def solve_standard(self, description): # the most standard usage
         
         trial_num=0
         finally_success=False
