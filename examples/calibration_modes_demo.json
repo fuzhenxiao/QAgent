@@ -1,0 +1,19 @@
+{
+  "mode_a": {
+    "name": "direct_update_backend",
+    "description": "Directly update backend_27q.inc constants from user calibration instructions.",
+    "input_example": [
+      {
+        "variable_name": "q8_freq",
+        "value": 5660000000.0
+      }
+    ],
+    "output_target": "./backend_27q.inc"
+  },
+  "mode_b": {
+    "name": "constraint_to_defcal",
+    "description": "Generate a small defcal/openpulse snippet from a constraint file without modifying backend_27q.inc.",
+    "constraint_file": "./examples/constraint_demo_q0.json",
+    "expected_output_file": "./examples/expected_defcal_q0.inc"
+  }
+}

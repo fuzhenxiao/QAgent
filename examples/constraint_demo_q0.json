@@ -1,0 +1,17 @@
+{
+  "qubits": [
+    {
+      "id": 0,
+      "logical_label": "q0",
+      "drive_port": "d0",
+      "readout_port": "m0",
+      "resonance_freq_hz": 5200000000.0
+    }
+  ],
+  "metadata": {
+    "drift_hz": {
+      "q0": 100000.0
+    },
+    "last_calibration_time": "2025-10-01T10:00:00Z"
+  }
+}
