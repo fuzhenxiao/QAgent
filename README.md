@@ -78,7 +78,7 @@ You can set up the environment with:
 
 ```bash
 conda env create -f env_requirement.yml
-conda activate qagent
+conda activate quantum
 ```
 ## Citation
 If you use this code, please cite:  
